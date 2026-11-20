@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بانک حقیقی</title>
+<style>
+body{font-family:tahoma;background:#f1f5f9;margin:0;padding:20px;color:#172554}
+header{background:#123b70;color:white;padding:22px;border-radius:16px;text-align:center}
+.card{background:white;padding:18px;margin-top:16px;border-radius:14px;box-shadow:0 2px 8px #ddd}
+input,button{width:100%;padding:13px;margin-top:10px;border-radius:9px;border:1px solid #ddd;box-sizing:border-box;font-size:16px}
+button{background:#123b70;color:white;border:0}
+</style>
+</head>
+<body>
+<header>
+<h2>بانک حقیقی</h2>
+<p>سامانه مدیریت حساب اعضا</p>
+</header>
+<div class="card">
+<h3>ورود به برنامه</h3>
+<input id="username" placeholder="نام کاربری">
+<input id="password" type="password" placeholder="رمز عبور">
+<button onclick="login()">ورود</button>
+<p id="message"></p>
+</div>
+<div class="card" id="panel" style="display:none">
+<h3>خوش آمدید</h3>
+<p>پنل مدیریت بانک حقیقی</p>
+</div>
+<script>
+function login(){
+let u=document.getElementById('username').value;
+let p=document.getElementById('password').value;
+if(u==='admin' && p==='123456'){
+document.getElementById('panel').style.display='block';
+document.getElementById('message').innerText='ورود موفق';
+}else{
+document.getElementById('message').innerText='نام کاربری یا رمز اشتباه است';
+}
+}
+</script>
+</body>
+</html>
